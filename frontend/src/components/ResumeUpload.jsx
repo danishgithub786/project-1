@@ -19,7 +19,7 @@ const ResumeUpload = () => {
   const fetchResumes = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/resumes', {
+      const response = await fetch('https://jobportalbackend-srks.onrender.com/api/resumes', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -60,7 +60,7 @@ const ResumeUpload = () => {
     formData.append('resume', file);
 
     try {
-      const response = await fetch('http://localhost:5000/api/resumes/upload', {
+      const response = await fetch('https://jobportalbackend-srks.onrender.com/api/resumes/upload', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -86,7 +86,7 @@ const ResumeUpload = () => {
 
   const handleDownload = async (resumeId, originalName) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/resumes/${resumeId}/download`, {
+      const response = await fetch(`https://jobportalbackend-srks.onrender.com/api/resumes/${resumeId}/download`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -112,7 +112,7 @@ const ResumeUpload = () => {
     if (!confirm('Are you sure you want to delete this resume?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/resumes/${resumeId}`, {
+      const response = await fetch(`https://jobportalbackend-srks.onrender.com/api/resumes/${resumeId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`

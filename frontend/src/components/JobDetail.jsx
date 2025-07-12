@@ -41,7 +41,7 @@ const JobDetail = () => {
 
   const fetchUserResumes = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/resumes', {
+      const response = await fetch('https://jobportalbackend-srks.onrender.com/api/resumes', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
